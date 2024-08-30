@@ -15,10 +15,10 @@ pipeline {
         }
         stage('SonarQube analysis') {
             environment {
-                scannerHome = tool 'Siri-sonar-scanner'
+                scannerHome = tool 'siri-sonar-scanner'
             }
             steps {
-                withSonarQubeEnv('Siri-sonarqube-server') {
+                withSonarQubeEnv('siri-sonarqube-server') {
                     sh "${scannerHome}/bin/sonar-scanner -X"
                 }
             }
